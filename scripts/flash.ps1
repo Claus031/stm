@@ -1,5 +1,5 @@
 param(
-    [ValidateSet('blink', 'blink_all_leds')]
+    [ValidateSet('blink', 'blink_all_leds', 'stm32f4discovery')]
     [string]$Target = 'blink'
 )
 
@@ -17,7 +17,9 @@ if ($null -eq $openocd) {
     $openocd = [pscustomobject]@{ Source = $openocdPath }
 }
 
-$elfPath = Join-Path $PSScriptRoot "..\build\$Target.elf"
+$resolvedTarget = if ($Target -eq 'stm32f4discovery') { 'blink' } else { $Target }
+
+$elfPath = Join-Path $PSScriptRoot "..\build\$resolvedTarget.elf"
 if (-not (Test-Path $elfPath)) {
     throw "ELF file not found: $elfPath. Build the project first."
 }

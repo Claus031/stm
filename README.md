@@ -62,6 +62,7 @@ Alternative script usage:
 ```powershell
 powershell -ExecutionPolicy Bypass -File scripts/flash.ps1 -Target blink
 powershell -ExecutionPolicy Bypass -File scripts/flash.ps1 -Target blink_all_leds
+powershell -ExecutionPolicy Bypass -File scripts/flash.ps1 -Target stm32f4discovery
 powershell -ExecutionPolicy Bypass -File scripts/debug-openocd.ps1
 ```
 

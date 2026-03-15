@@ -107,6 +107,24 @@
       },
       "dependsOn": "build: blink_all_leds",
       "problemMatcher": []
+    },
+    {
+      "label": "flash: stm32f4discovery",
+      "type": "shell",
+      "command": "powershell",
+      "args": [
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "scripts/flash.ps1",
+        "-Target",
+        "stm32f4discovery"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "dependsOn": "build: blink",
+      "problemMatcher": []
     }
   ]
 }

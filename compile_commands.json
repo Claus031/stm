@@ -1,0 +1,38 @@
+[
+{
+  "directory": "C:/Projects/STM32f4/build",
+  "command": "C:\\PROGRA~2\\ARMGNU~1\\14EFD8~1.2RE\\bin\\AR19DD~1.EXE -DSTM32F407xx -IC:/Projects/STM32f4/external/STM32CubeF4/Drivers/CMSIS/Include -IC:/Projects/STM32f4/external/STM32CubeF4/Drivers/CMSIS/Device/ST/STM32F4xx/Include  -mcpu=cortex-m4 -mthumb -mfpu=fpv4-sp-d16 -mfloat-abi=hard -ffunction-sections -fdata-sections -fno-common -Wall -Wextra -Wpedantic -O3 -DNDEBUG -std=c11 -o CMakeFiles\\blink.elf.dir\\src\\main.c.obj -c C:\\Projects\\STM32f4\\src\\main.c",
+  "file": "C:/Projects/STM32f4/src/main.c",
+  "output": "C:/Projects/STM32f4/build/CMakeFiles/blink.elf.dir/src/main.c.obj"
+},
+{
+  "directory": "C:/Projects/STM32f4/build",
+  "command": "C:\\PROGRA~2\\ARMGNU~1\\14EFD8~1.2RE\\bin\\AR19DD~1.EXE -DSTM32F407xx -IC:/Projects/STM32f4/external/STM32CubeF4/Drivers/CMSIS/Include -IC:/Projects/STM32f4/external/STM32CubeF4/Drivers/CMSIS/Device/ST/STM32F4xx/Include  -mcpu=cortex-m4 -mthumb -mfpu=fpv4-sp-d16 -mfloat-abi=hard -ffunction-sections -fdata-sections -fno-common -Wall -Wextra -Wpedantic -O3 -DNDEBUG -std=c11 -o CMakeFiles\\blink.elf.dir\\external\\STM32CubeF4\\Drivers\\CMSIS\\Device\\ST\\STM32F4xx\\Source\\Templates\\system_stm32f4xx.c.obj -c C:\\Projects\\STM32f4\\external\\STM32CubeF4\\Drivers\\CMSIS\\Device\\ST\\STM32F4xx\\Source\\Templates\\system_stm32f4xx.c",
+  "file": "C:/Projects/STM32f4/external/STM32CubeF4/Drivers/CMSIS/Device/ST/STM32F4xx/Source/Templates/system_stm32f4xx.c",
+  "output": "C:/Projects/STM32f4/build/CMakeFiles/blink.elf.dir/external/STM32CubeF4/Drivers/CMSIS/Device/ST/STM32F4xx/Source/Templates/system_stm32f4xx.c.obj"
+},
+{
+  "directory": "C:/Projects/STM32f4/build",
+  "command": "C:\\PROGRA~2\\ARMGNU~1\\14EFD8~1.2RE\\bin\\AR19DD~1.EXE -DSTM32F407xx -IC:/Projects/STM32f4/external/STM32CubeF4/Drivers/CMSIS/Include -IC:/Projects/STM32f4/external/STM32CubeF4/Drivers/CMSIS/Device/ST/STM32F4xx/Include  -mcpu=cortex-m4 -mthumb -mfpu=fpv4-sp-d16 -mfloat-abi=hard -ffunction-sections -fdata-sections -fno-common -Wall -Wextra -Wpedantic -x assembler-with-cpp -O3 -DNDEBUG -o CMakeFiles\\blink.elf.dir\\external\\STM32CubeF4\\Drivers\\CMSIS\\Device\\ST\\STM32F4xx\\Source\\Templates\\gcc\\startup_stm32f407xx.s.obj -c C:\\Projects\\STM32f4\\external\\STM32CubeF4\\Drivers\\CMSIS\\Device\\ST\\STM32F4xx\\Source\\Templates\\gcc\\startup_stm32f407xx.s",
+  "file": "C:/Projects/STM32f4/external/STM32CubeF4/Drivers/CMSIS/Device/ST/STM32F4xx/Source/Templates/gcc/startup_stm32f407xx.s",
+  "output": "C:/Projects/STM32f4/build/CMakeFiles/blink.elf.dir/external/STM32CubeF4/Drivers/CMSIS/Device/ST/STM32F4xx/Source/Templates/gcc/startup_stm32f407xx.s.obj"
+},
+{
+  "directory": "C:/Projects/STM32f4/build",
+  "command": "C:\\PROGRA~2\\ARMGNU~1\\14EFD8~1.2RE\\bin\\AR19DD~1.EXE -DSTM32F407xx -IC:/Projects/STM32f4/external/STM32CubeF4/Drivers/CMSIS/Include -IC:/Projects/STM32f4/external/STM32CubeF4/Drivers/CMSIS/Device/ST/STM32F4xx/Include  -mcpu=cortex-m4 -mthumb -mfpu=fpv4-sp-d16 -mfloat-abi=hard -ffunction-sections -fdata-sections -fno-common -Wall -Wextra -Wpedantic -O3 -DNDEBUG -std=c11 -o CMakeFiles\\blink_all_leds.elf.dir\\src\\main_all_leds.c.obj -c C:\\Projects\\STM32f4\\src\\main_all_leds.c",
+  "file": "C:/Projects/STM32f4/src/main_all_leds.c",
+  "output": "C:/Projects/STM32f4/build/CMakeFiles/blink_all_leds.elf.dir/src/main_all_leds.c.obj"
+},
+{
+  "directory": "C:/Projects/STM32f4/build",
+  "command": "C:\\PROGRA~2\\ARMGNU~1\\14EFD8~1.2RE\\bin\\AR19DD~1.EXE -DSTM32F407xx -IC:/Projects/STM32f4/external/STM32CubeF4/Drivers/CMSIS/Include -IC:/Projects/STM32f4/external/STM32CubeF4/Drivers/CMSIS/Device/ST/STM32F4xx/Include  -mcpu=cortex-m4 -mthumb -mfpu=fpv4-sp-d16 -mfloat-abi=hard -ffunction-sections -fdata-sections -fno-common -Wall -Wextra -Wpedantic -O3 -DNDEBUG -std=c11 -o CMakeFiles\\blink_all_leds.elf.dir\\external\\STM32CubeF4\\Drivers\\CMSIS\\Device\\ST\\STM32F4xx\\Source\\Templates\\system_stm32f4xx.c.obj -c C:\\Projects\\STM32f4\\external\\STM32CubeF4\\Drivers\\CMSIS\\Device\\ST\\STM32F4xx\\Source\\Templates\\system_stm32f4xx.c",
+  "file": "C:/Projects/STM32f4/external/STM32CubeF4/Drivers/CMSIS/Device/ST/STM32F4xx/Source/Templates/system_stm32f4xx.c",
+  "output": "C:/Projects/STM32f4/build/CMakeFiles/blink_all_leds.elf.dir/external/STM32CubeF4/Drivers/CMSIS/Device/ST/STM32F4xx/Source/Templates/system_stm32f4xx.c.obj"
+},
+{
+  "directory": "C:/Projects/STM32f4/build",
+  "command": "C:\\PROGRA~2\\ARMGNU~1\\14EFD8~1.2RE\\bin\\AR19DD~1.EXE -DSTM32F407xx -IC:/Projects/STM32f4/external/STM32CubeF4/Drivers/CMSIS/Include -IC:/Projects/STM32f4/external/STM32CubeF4/Drivers/CMSIS/Device/ST/STM32F4xx/Include  -mcpu=cortex-m4 -mthumb -mfpu=fpv4-sp-d16 -mfloat-abi=hard -ffunction-sections -fdata-sections -fno-common -Wall -Wextra -Wpedantic -x assembler-with-cpp -O3 -DNDEBUG -o CMakeFiles\\blink_all_leds.elf.dir\\external\\STM32CubeF4\\Drivers\\CMSIS\\Device\\ST\\STM32F4xx\\Source\\Templates\\gcc\\startup_stm32f407xx.s.obj -c C:\\Projects\\STM32f4\\external\\STM32CubeF4\\Drivers\\CMSIS\\Device\\ST\\STM32F4xx\\Source\\Templates\\gcc\\startup_stm32f407xx.s",
+  "file": "C:/Projects/STM32f4/external/STM32CubeF4/Drivers/CMSIS/Device/ST/STM32F4xx/Source/Templates/gcc/startup_stm32f407xx.s",
+  "output": "C:/Projects/STM32f4/build/CMakeFiles/blink_all_leds.elf.dir/external/STM32CubeF4/Drivers/CMSIS/Device/ST/STM32F4xx/Source/Templates/gcc/startup_stm32f407xx.s.obj"
+}
+]
