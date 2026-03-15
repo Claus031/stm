@@ -1,5 +1,8 @@
 build/
-.vscode/
+.vscode/*
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
 *.elf
 *.hex
 *.bin

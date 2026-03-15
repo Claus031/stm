@@ -1,0 +1,33 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Debug blink (PD13)",
+      "cwd": "${workspaceFolder}",
+      "executable": "${workspaceFolder}/build/blink.elf",
+      "request": "launch",
+      "type": "cortex-debug",
+      "servertype": "openocd",
+      "configFiles": [
+        "${workspaceFolder}/scripts/openocd/stm32f4discovery.cfg"
+      ],
+      "device": "STM32F407VG",
+      "runToEntryPoint": "main",
+      "preLaunchTask": "build: blink"
+    },
+    {
+      "name": "Debug blink_all_leds (PD12-PD15)",
+      "cwd": "${workspaceFolder}",
+      "executable": "${workspaceFolder}/build/blink_all_leds.elf",
+      "request": "launch",
+      "type": "cortex-debug",
+      "servertype": "openocd",
+      "configFiles": [
+        "${workspaceFolder}/scripts/openocd/stm32f4discovery.cfg"
+      ],
+      "device": "STM32F407VG",
+      "runToEntryPoint": "main",
+      "preLaunchTask": "build: blink_all_leds"
+    }
+  ]
+}
