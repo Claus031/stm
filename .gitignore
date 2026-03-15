@@ -1,0 +1,12 @@
+build/
+.vscode/
+*.elf
+*.hex
+*.bin
+*.map
+*.o
+*.obj
+*.d
+*.su
+*.tmp
+*.log

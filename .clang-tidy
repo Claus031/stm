@@ -1,0 +1,8 @@
+Checks: >
+  bugprone-*,
+  readability-*,
+  performance-*,
+  -readability-magic-numbers
+WarningsAsErrors: ''
+HeaderFilterRegex: 'src/.*|external/STM32CubeF4/Drivers/CMSIS/.*'
+FormatStyle: none
