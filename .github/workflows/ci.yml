@@ -1,0 +1,39 @@
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  build-and-lint:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive
+
+      - name: Install dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y cmake ninja-build cppcheck gcc-arm-none-eabi binutils-arm-none-eabi
+
+      - name: Configure
+        run: cmake -S . -B build -G Ninja -DCMAKE_TOOLCHAIN_FILE=toolchain.cmake -DCMAKE_BUILD_TYPE=Release
+
+      - name: Build all targets
+        run: cmake --build build
+
+      - name: Run cppcheck
+        run: cmake --build build --target lint
+
+      - name: Verify firmware artifacts
+        run: |
+          test -s build/blink.elf
+          test -s build/blink.hex
+          test -s build/blink.bin
+          test -s build/blink_all_leds.elf
+          test -s build/blink_all_leds.hex
+          test -s build/blink_all_leds.bin
