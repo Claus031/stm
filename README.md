@@ -28,6 +28,44 @@ Artifacts:
 - `build/blink_all_leds.hex`
 - `build/blink_all_leds.bin`
 
+## Initialize and Run
+
+After building, initialize the build system once:
+
+```powershell
+cmake -S . -B build -G Ninja -DCMAKE_TOOLCHAIN_FILE=toolchain.cmake -DCMAKE_BUILD_TYPE=Release
+```
+
+Then build:
+
+```powershell
+cmake --build build --target blink_all_leds.elf
+```
+
+Flash to the board:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File scripts/flash.ps1 -Target blink_all_leds
+```
+
+Start the serial monitor to view output over USB CDC:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File scripts/serial-monitor.ps1
+```
+
+You will see output like:
+
+```
+Opening COM3 at 115200 baud...
+Serial monitor started. Press Ctrl+C to stop.
+LED ON: GREEN
+LED ON: ORANGE
+LED ON: RED
+LED ON: BLUE
+...
+```
+
 ## Lint
 
 ```powershell
@@ -64,6 +102,21 @@ powershell -ExecutionPolicy Bypass -File scripts/flash.ps1 -Target blink
 powershell -ExecutionPolicy Bypass -File scripts/flash.ps1 -Target blink_all_leds
 powershell -ExecutionPolicy Bypass -File scripts/flash.ps1 -Target stm32f4discovery
 powershell -ExecutionPolicy Bypass -File scripts/debug-openocd.ps1
+```
+
+## Serial Monitor (Auto COM Detection)
+
+Use the script below to automatically pick a serial COM port and stream UART output:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File scripts/serial-monitor.ps1
+```
+
+Optional arguments:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File scripts/serial-monitor.ps1 -BaudRate 115200
+powershell -ExecutionPolicy Bypass -File scripts/serial-monitor.ps1 -Port COM5
 ```
 
 The OpenOCD board configuration is in `scripts/openocd/stm32f4discovery.cfg`.

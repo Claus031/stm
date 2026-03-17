@@ -12,7 +12,28 @@ set(MCU_DEFINES STM32F407xx)
 set(LINKER_SCRIPT ${CMAKE_SOURCE_DIR}/linker/stm32f407vg.ld)
 set(CMSIS_INCLUDE_DIR ${CMAKE_SOURCE_DIR}/external/STM32CubeF4/Drivers/CMSIS/Include)
 set(CMSIS_DEVICE_INCLUDE_DIR ${CMAKE_SOURCE_DIR}/external/STM32CubeF4/Drivers/CMSIS/Device/ST/STM32F4xx/Include)
+set(HAL_DRIVER_DIR ${CMAKE_SOURCE_DIR}/external/STM32CubeF4/Drivers/STM32F4xx_HAL_Driver)
+set(USBD_LIB_DIR ${CMAKE_SOURCE_DIR}/external/STM32CubeF4/Middlewares/ST/STM32_USB_Device_Library)
 set(OPENOCD_CONFIG ${CMAKE_SOURCE_DIR}/scripts/openocd/stm32f4discovery.cfg)
+
+set(HAL_SOURCES
+    ${HAL_DRIVER_DIR}/Src/stm32f4xx_hal.c
+    ${HAL_DRIVER_DIR}/Src/stm32f4xx_hal_rcc.c
+    ${HAL_DRIVER_DIR}/Src/stm32f4xx_hal_rcc_ex.c
+    ${HAL_DRIVER_DIR}/Src/stm32f4xx_hal_gpio.c
+    ${HAL_DRIVER_DIR}/Src/stm32f4xx_hal_cortex.c
+    ${HAL_DRIVER_DIR}/Src/stm32f4xx_hal_pcd.c
+    ${HAL_DRIVER_DIR}/Src/stm32f4xx_hal_pcd_ex.c
+    ${HAL_DRIVER_DIR}/Src/stm32f4xx_hal_pwr.c
+    ${HAL_DRIVER_DIR}/Src/stm32f4xx_ll_usb.c
+)
+
+set(USBD_SOURCES
+    ${USBD_LIB_DIR}/Core/Src/usbd_core.c
+    ${USBD_LIB_DIR}/Core/Src/usbd_ctlreq.c
+    ${USBD_LIB_DIR}/Core/Src/usbd_ioreq.c
+    ${USBD_LIB_DIR}/Class/CDC/Src/usbd_cdc.c
+)
 
 set(CPU_FLAGS
     -mcpu=cortex-m4
@@ -39,6 +60,13 @@ set(CMAKE_ASM_FLAGS "${CMAKE_ASM_FLAGS} ${COMMON_FLAGS_STR} -x assembler-with-cp
 set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} ${CPU_FLAGS_STR} -Wl,--gc-sections -specs=nano.specs -specs=nosys.specs")
 
 set(COMMON_FIRMWARE_SOURCES
+    src/serial_uart.c
+    src/syscalls.c
+    src/usbd_conf.c
+    src/usbd_desc.c
+    src/usbd_cdc_if.c
+    ${HAL_SOURCES}
+    ${USBD_SOURCES}
     external/STM32CubeF4/Drivers/CMSIS/Device/ST/STM32F4xx/Source/Templates/system_stm32f4xx.c
     external/STM32CubeF4/Drivers/CMSIS/Device/ST/STM32F4xx/Source/Templates/gcc/startup_stm32f407xx.s
 )
@@ -52,8 +80,12 @@ function(add_stm32_target target_name app_source)
     target_compile_definitions(${target_name}.elf PRIVATE ${MCU_DEFINES})
 
     target_include_directories(${target_name}.elf PRIVATE
+        ${CMAKE_SOURCE_DIR}/src
         ${CMSIS_INCLUDE_DIR}
         ${CMSIS_DEVICE_INCLUDE_DIR}
+        ${HAL_DRIVER_DIR}/Inc
+        ${USBD_LIB_DIR}/Core/Inc
+        ${USBD_LIB_DIR}/Class/CDC/Inc
     )
 
     target_link_options(${target_name}.elf PRIVATE

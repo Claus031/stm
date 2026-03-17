@@ -1,5 +1,9 @@
 #include "stm32f4xx.h"
 
+#include <stdio.h>
+
+#include "serial_uart.h"
+
 static void delay_cycles(volatile uint32_t cycles)
 {
     while (cycles-- > 0U)
@@ -37,15 +41,24 @@ int main(void)
         GPIO_BSRR_BS14,
         GPIO_BSRR_BS15,
     };
+    const char *colors[] = {
+        "GREEN",
+        "ORANGE",
+        "RED",
+        "BLUE",
+    };
     uint32_t index = 0U;
 
     init_led_gpio();
+    serial_uart_init();
+    printf("STM32 LED sequence started\n");
 
     while (1)
     {
         GPIOD->BSRR = (led_mask << 16U);
         GPIOD->BSRR = sequence[index];
-        delay_cycles(250000U);
+        printf("LED ON: %s\n", colors[index]);
+        delay_cycles(13000000U);
 
         index++;
         if (index >= (sizeof(sequence) / sizeof(sequence[0])))
