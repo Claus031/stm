@@ -45,7 +45,7 @@ int main(void)
     {
         GPIOD->BSRR = (led_mask << 16U);
         GPIOD->BSRR = sequence[index];
-        delay_cycles(150000U);
+        delay_cycles(250000U);
 
         index++;
         if (index >= (sizeof(sequence) / sizeof(sequence[0])))
